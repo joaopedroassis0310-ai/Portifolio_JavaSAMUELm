@@ -1,31 +1,70 @@
 package Jogo.src;
 
+import java.util.Scanner;
+
 public class Personagem {
-    // Atributos totalmente desprotegidos
-    String nome;
+    private String nome;
+    int atacar;
     private int vida;
+    String equipamento;
+    int nivel;
+    String NomePublico;
+    
 
-    public Personagem (String nomeEscolhido){
-        this.nome = nomeEscolhido;
-        this.vida = 100;
-        System.out.println("Aqui nasce o Heroi");
+   void personagem() {
+    Scanner sc = new Scanner(System.in);
+
+    System.out.println(
+        "Escolha sua classe: Mago 🔥 ou Guerreiro 🗡️"
+    );
+
+    String classe = sc.nextLine();
+
+    if (classe.equalsIgnoreCase("Mago")) {
+        NomePublico = "Mago";
+
+        System.out.println("Tipo: " + nome);
+        System.out.println("Classe: Mago");
+
+    } else if (classe.equalsIgnoreCase("Guerreiro")) {
+        NomePublico = "Guerreiro";
+
+        System.out.println("Nome: " + nome);
+        System.out.println("Classe: Guerreiro");
+
+    } else {
+        System.out.println("Classe inválida!");
     }
 
-    // Método que tenta impor uma regra
-    void tomarPocaoCurativa(int cura){
-        vida = vida + cura;
-        if(vida > 100){
-            vida = 100;
-        }
-        System.out.println("Vida " + cura);
-    }
-    void receberDano(int dano){
-    vida = vida - dano;
-    if(vida <= 0){
-        vida = 0;
-        System.out.println("você foi derrotado");
-    }else{
-        System.out.println("Sofreu dano " + dano );
-    }
+    System.out.println("==================================");
 }
+
+    public Personagem(String nomeInicial, int vidaInicial, String classe){
+    this.nome = nomeInicial;
+    this.vida = vidaInicial;
+    this.NomePublico = classe;
+}
+    public String getNome(){
+    return this.nome;
+}
+    public int getVida(){
+        return this.vida;
+    }
+    public void setNome() {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Digite o nome do seu personagem!");
+    String nomeInicial = scanner.nextLine();
+
+    this.nome = nomeInicial;
+
+    System.out.println(
+        "O nome do seu personagem é " + this.nome
+    );
+}
+    public void setVida(){
+        if(vida <= 0){
+            System.out.println("Você morreu, tente novamente! :/");
+        }
+    }
 }
