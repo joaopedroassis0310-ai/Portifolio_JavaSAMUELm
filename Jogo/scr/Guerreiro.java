@@ -1,10 +1,10 @@
-package Jogo.src;
+import java.util.Scanner;
 
 public class Guerreiro {
+
     int Dano = 20;
-    void ataque(){
+
+    public void ataque() {
         System.out.println("Shiiing! ⚔️");
     }
-        
-    }
-
+}

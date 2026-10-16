@@ -1,4 +1,3 @@
-package Jogo.src;
 
 public class exemplo {
     // Atributos totalmente desprotegidos
